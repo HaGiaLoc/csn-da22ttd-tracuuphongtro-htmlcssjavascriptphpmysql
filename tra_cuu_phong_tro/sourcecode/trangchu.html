@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <title>Trang chủ</title>
+        <link rel="stylesheet" href="./trangchu.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <script src="./trangchu.js"></script>
+        <script src="./dangnhap.js"></script>
+    </head>
+
+    <body>
+        <div class="header-container">
+            <header>
+
+                <!--Logo trang web-->
+                <a href="trangchu.html">
+                    <img src="../images/TRA_CUU_PHONG_TRO_LOGO.png" alt="Logo trang chủ" width="130px" height="130px">
+                </a>
+
+                 <!--Thanh định hướng-->
+                <div class="navigation-bar">
+                    <nav>
+                        <a href="trangchu.html">TRANG CHỦ</a>
+                        <a href="">PHÒNG TRỌ CHO THUÊ</a>
+                    </nav>
+                </div>
+                <!-- Nút đăng nhập -->
+                <div class="login-container">
+                    <span id="user-info"></span>
+                    <button onclick="openModal()" id="login-btn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        &nbsp;&nbsp;Đăng nhập
+                    </button>
+   
+                    <button id="logout-btn" class="logout" style="display: none;">
+                        Đăng xuất
+                    </button>
+                </div>
+
+                <!-- Form đăng nhập -->
+                <div id="login-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+
+                        <!-- Đăng Nhập -->
+                        <div class="form-section">
+                            <h4>Đăng Nhập</h4>
+                            <form id="login-form">
+                                <label for="login-username">Tên tài khoản hoặc địa chỉ email*</label>
+                                <input type="text" id="login-username" name="login-username" required>
+                                
+                                <label for="login-password">Mật khẩu*</label>
+                                <input type="password" id="login-password" name="login-password" required>
+                                    
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="remember-me" name="remember-me">
+                                    <label for="remember-me">Ghi nhớ mật khẩu</label>
+                                </div>
+                                    
+                                <input type="submit" value="Đăng Nhập">
+                                <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                            </form>
+                        </div>
+                            
+                        <!-- Đăng Ký -->
+                        <div class="form-section">
+                            <h4>Đăng Ký</h4>
+                            <form id="register-form">
+                                <label for="register-email">Địa chỉ email*</label>
+                                <input type="email" id="register-email" name="register-email" required>
+                                    
+                                <label for="register-password">Mật khẩu*</label>
+                                <input type="password" id="register-password" name="register-password" required>
+                                    
+                                <input type="submit" value="Đăng Ký">
+                            </form>
+                        </div>
+                        <div id="error-msg" style="display: none;">Sai tên người dùng hoặc mật khẩu.</div>
+                    </div>
+                </div>
+                <script src="./dangnhap.js"></script>
+            </header>
+        </div>
+        
+        <div class="main-container">
+            <main>    
+                <div class="search-bar">
+                    <form action="#" class="form-tim-kiem">
+                            <div class="dropdown" onclick="toggleDropdown(this)">
+                            <div class="location">Địa điểm <i class="fa-solid fa-angle-down"></i></div>
+                            <div class="dropdown_content-location">
+                                <input type="hidden" id="district" name="districtValue">
+                                <input type="hidden" id="hamlet" name="hamletValue">
+                                <input type="hidden" id="street" name="streetValue">
+                            </div>
+                        </div>
+                        <div class="dropdown" onclick="toggleDropdown(this)">
+                            <div class="price">Giá thành <i class="fa-solid fa-angle-down"></i></div>
+                            <div class="dropdown_content-price">
+                                <input type="range" id="slider_gia" min="0" max="30000000" value="15000000" oninput="updatePriceInputs()">
+                                <div class="nhap-gia">
+                                    <input type="text" class="price-min_max" id="gia_toi_thieu" value="0" oninput="updateSliderLimits()">
+                                    <input type="text" class="price-min_max" id="gia_toi_da" value="30000000" oninput="updateSliderLimits()">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown" onclick="toggleDropdown(this)">
+                            <div class="area">
+                                <label for="dropdown_content-area">Diện tích</label>
+                                <select id="dropdown_content-area" onchange="selectArea(this)">
+                                    <option value="under-20">Dưới 20 m²</option>
+                                    <option value="20-40">20 m² - 40 m²</option>
+                                    <option value="40-60">40 m² - 60 m²</option>
+                                    <option value="60-80">60 m² - 80 m²</option>
+                                    <option value="80-100">80 m² - 100 m²</option>
+                                    <option value="above-100">Trên 100 m²</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="submit" class="search-button" value="Tìm kiếm">
+                    </form>   
+                </div>
+                <img class="introduction-img" src="../images/KHU_NHA_O_CAO_TANG_O_DONG_HOI.png" alt="Khu nhà ở cao tầng ở Đồng Hới">
+                
+                <div class="danhsachphongtro">
+                    <article class="phongtro">
+                        <a href="#" class="lien-ket-phong-tro">
+                            <div class="hinh-anh-review">
+                                <img src="../images/phong_tro_1.jpg" alt="Phòng trọ 1">
+                            </div>
+                            <div class="details">
+                                <div class="thong-so">
+                                    <span class="price-detail">1,2 Triệu/tháng</span>
+                                    <span class="area-detail">100 m²</span>
+                                    <span class="place-detail">Châu thành, Trà Vinh</span>
+                                </div>
+                                <div class="thong-tin">
+                                    <div class="time d-flex align-items-center">
+                                        <span><i class="fas fa-clock"></i> 09/11/2024</span>
+                                    </div>
+                                    <br>
+                                    <p class="limit-text">
+                                        Phòng Ở Ghép Khu Dân Cư Cao Cấp Gần Khu Công Nghệ Cao TP.Thủ Đức.<br>
+                                        ☛ Gần đường Bưng Ông Thoàn, Liên Phường, Võ Chí Công, Đỗ Xuân Hợp.<br>
+                                        ☛ Gần công ty Samsung, FPT, Nidec, Jabil.<br>
+                                        📺 Nội Thất:<br>
+                                        ☛ Giường tầng.<br>
+                                        ☛ Máy lạnh.<br>
+                                        ☛ Tủ lạnh, bếp từ, lò vi sóng, tủ bếp cao cấp.<br>
+                                        ☛ Máy giặt, máy sấy quần áo.<br>
+                                        ☛ Tủ quần áo, bàn làm việc.<br>
+                                        🚴‍♂️ Tiện Ích:<br>
+                                        ☛ Môi trường sống văn minh, cao cấp.<br>
+                                        ☛ Hồ bơi, phòng tập GYM miễn phí.<br>
+                                        ☛ Công viên cây xanh.<br>
+                                        👩‍💼 Khách Hàng:<br>
+                                        ☛ Khách hàng của chúng tôi là những nhân viên văn phòng, sinh viên đại học, có văn hóa, ý thức để cùng nhau xây dựng một môi trường sống văn minh tiện lợi với mức giá hợp lý.<br>
+                                        💰 Giá Thuê: Từ 1.200.000Đ/Người/Tháng chưa bao gồm điện nước.<br>
+                                        📱 Liên Hệ: 0363096032<br>
+                                    </p>
+                                </div>
+                                <div class="thong-tin-lien-lac">
+                                    <span class="name">Bùi Lê Tố Quyên</span>
+                                    <span class="sdt">0363096032</span>
+                                    <span class="zalo">0363096032</span>
+                                </div>
+                            </div> 
+                        </a>
+                    </article>
+                </div>
+
+                <div class="danhsachphongtro">
+                    <article class="phongtro">
+                        <a href="#" class="lien-ket-phong-tro">
+                            <div class="hinh-anh-review">
+                                <img src="../images/phong_tro_2.jpg" alt="Phòng trọ 1">
+                            </div>
+                            <div class="details">
+                                <div class="thong-so">
+                                    <span class="price-detail">6,5 Triệu/tháng</span>
+                                    <span class="area-detail">31 m²</span>
+                                    <span class="place-detail">Châu thành, Trà Vinh</span>
+                                </div>
+                                <div class="thong-tin">
+                                    <div class="time d-flex align-items-center">
+                                        <span><i class="fas fa-clock"></i> 09/11/2024</span>
+                                    </div>
+                                    <br>
+                                    <p class="limit-text">
+                                        Studio ban công full nội thất Lê Hồng Phong Q10, chỉ cho Nữ thuê
+                                        <br>
+                                        Giá: 6.500.000 đ
+                                        <br>
+                                        Mình là chủ nhà đăng tin cho thuê, chỉ cho nữ thuê, hợp đồng dài hạn.
+                                        <br>
+                                        Ngay khu ẩm thực và chợ hoa Hồ Thị Kỷ, khu ăn uống tấp nập ngày lẫn đêm. Khu vực dân cư văn minh, nhiều văn phòng, cửa hàng tiện lợi, gần siêu thị Satra, BigC, chợ, nhiều ministore xung quanh. Trong vòng bán kính 5 - 7 phút Gần các Trường ĐH HOA SEN, ĐH Huflit, ĐH Sài Gòn, ĐH Sư Phạm, ĐH KHXH&NV, ĐH Kinh Tế, Cao đẳng KT, ĐH Văn Hiến, ĐH Y Khoa Phạm Ngọc Thạch, ĐH CNTT Gia Định, cao đẳng Phát Thanh Truyền Hình 2, Học viện Hành Chính Quốc Gia... Ngay trung tâm, thuận tiện di chuyển giữa các quận 1,3,5,7,8, Tân Bình, Phú Nhuận... Diện tích sử dụng: 31m2. Thiết kế hiện đại và hợp lý. Đầy đủ phòng ngủ, phòng khách, bếp, ban công, WC trong 1 không gian. Full nội thất mới 100% chỉ xách vali vào ở. - Thiết kế hiện đại, sang trọng. - Camera an ninh 24/24. - Giờ giấc tự do, không chung chủ. - Bếp từ, kệ bếp, giá bếp cao cấp. - Nhà vệ sinh trang bị nội thất cao cấp. - Máy lạnh, tủ lạnh tiết kiệm điện. - Tủ quần áo gỗ cao cấp. - Giường gỗ và nệm cao cấp đưa lại cho bạn giấc ngủ thoải mái. - Bàn trang điểm cao cấp và rất cute. - Ban công. - Sân thượng phơi đồ thoáng mát, view toàn thành phố. - Hàng xóm văn minh, cực kỳ an ninh, yên tĩnh.
+                                        <br>
+                                        Phòng ở tối đa 2 người, thích hợp cho khách nước ngoài, nhân viên văn phòng, sinh viên.. lịch sự, trí thức.
+                                        <br>
+                                        Hình ảnh chân thực 100% hình minh đăng ntn thì bên ngoài như vậy. Gọi điện trực tiếp cho mình để xem phòng!…
+                                    </p>
+                                </div>
+                                <div class="thong-tin-lien-lac">
+                                    <span class="name">Lê Tuyết Trinh</span>
+                                    <span class="sdt">0903968139</span>
+                                    <span class="zalo">0903968139</span>
+                                </div>
+                            </div> 
+                        </a>
+                    </article>
+                </div>
+                
+                <div class="danhsachphongtro">
+                    <article class="phongtro">
+                        <a href="#" class="lien-ket-phong-tro">
+                            <div class="hinh-anh-review">
+                                <img src="../images/phong_tro_3.jpg" alt="Phòng trọ 1">
+                            </div>
+                            <div class="details">
+                                <div class="thong-so">
+                                    <span class="price-detail">1,5 Triệu/tháng</span>
+                                    <span class="area-detail">100 m²</span>
+                                    <span class="place-detail">Châu thành, Trà Vinh</span>
+                                </div>
+                                <div class="thong-tin">
+                                    <div class="time d-flex align-items-center">
+                                        <span><i class="fas fa-clock"></i> 09/11/2024</span>
+                                    </div>
+                                    <br>
+                                    <p class="limit-text">
+                                        Phòng Ở Ghép Khu Dân Cư Cao Cấp Gần ĐH FPT, UFM, HUTECH TP.Thủ Đức.<br>
+                                        ☛ Gần khu công nghệ cao, FPT Software.<br>
+                                        ☛ Gần công ty Samsung, Nidec, Jabil.<br>
+                                        📺 Nội Thất:<br>
+                                        ☛ Giường tầng.<br>
+                                        ☛ Máy lạnh.<br>
+                                        ☛ Tủ lạnh, bếp từ, lò vi sóng, tủ bếp cao cấp.<br>
+                                        ☛ Máy giặt, sân phơi đồ.<br>
+                                        ☛ Tủ quần áo, bàn làm việc.<br>
+                                        🚴‍♂️ Tiện Ích:<br>
+                                        ☛ Môi trường sống văn minh, cao cấp.<br>
+                                        ☛ Hồ bơi, phòng tập GYM miễn phí.<br>
+                                        ☛ Công viên cây xanh.<br>
+                                        👩‍💼 Khách Hàng:<br>
+                                        ☛ Khách hàng của chúng tôi là những nhân viên văn phòng, sinh viên đại học, có văn hóa, ý thức để cùng nhau xây dựng một môi trường sống văn minh tiện lợi với mức giá hợp lý.<br>
+                                        💰 Giá Thuê: Từ 1.500.000Đ/Người/Tháng chưa bao gồm điện nước.<br>
+                                        📱 Liên Hệ: 0363096032<br>
+                                    </p>
+                                </div>
+                                <div class="thong-tin-lien-lac">
+                                    <span class="name">Bùi Lê Tố Quyên</span>
+                                    <span class="sdt">0363096032</span>
+                                    <span class="zalo">0363096032</span>
+                                </div>
+                            </div> 
+                        </a>
+                    </article>
+                </div>
+
+                <div class="danhsachphongtro">
+                    <article class="phongtro">
+                        <a href="#" class="lien-ket-phong-tro">
+                            <div class="hinh-anh-review">
+                                <img src="../images/phong_tro_4.jpg" alt="Phòng trọ 1">
+                            </div>
+                            <div class="details">
+                                <div class="thong-so">
+                                    <span class="price-detail">5,5 Triệu/tháng</span>
+                                    <span class="area-detail">30 m²</span>
+                                    <span class="place-detail">Châu thành, Trà Vinh</span>
+                                </div>
+                                <div class="thong-tin">
+                                    <div class="time d-flex align-items-center">
+                                        <span><i class="fas fa-clock"></i> 09/11/2024</span>
+                                    </div>
+                                    <br>
+                                    <p class="limit-text">
+                                        Phòng trong nhà cao tầng rông 30 m². Mỗi lầu 1 phòng, toilet riêng, phòng có 1 ban công, 2 cửa sổ lớn thoáng mát, sáng sủa ban ngày ko cần bật đèn, tiết kiệm điện , có máy lạnh, nước nóng lạnh, tủ đồ đầy đủ... giúp việc dọn vệ sinh hàng tuần , nhà mới xây nên rộng rãi , sạch sẽ, thoang mát....xung quanh đầy đủ tiện ích, dịch vụ...Giảm giá cho sinh viên thuê phòng...Ngoài ra còn có các phòng giá 3tr5 cửa sổ lớn v...v...
+                                        <br>
+                                        Giá 5.500.000/thang, nước 150.000, điện 4.000/kw, free (miễn phí) 1 xe máy, wifi, rác miễn phí !...Có máy giặc!
+                                        <br>
+                                        Giờ giấc tự do!
+                                        <br>
+                                        Có bếp nấu ăn
+                                        <br>
+                                        Gần rạp CGV, trường học, chợ, siêu thị, khu vực ăn uống, mua sắm, giáp Phan xích long, thuận tiện đi các quận trung tâm 3,10,bình thạnh, phú nhuận, gò vấp,gần trường hutec,hồng bàng,kinh tế,kiến trúc,khoa học xã hội...
+                                        Gần bờ kè Hoàng Sa, Trường sa thuận tiện cho việc tập thể dục, đi bộ mát mẻ...
+                                        Liên hệ : 0843.646.292 - 0928.188.198 (chính chủ) để xem phòng.
+                                    </p>
+                                </div>
+                                <div class="thong-tin-lien-lac">
+                                    <span class="name">Chị Anh</span>
+                                    <span class="sdt">0928188198</span>
+                                    <span class="zalo">0928188198</span>
+                                </div>
+                            </div> 
+                        </a>
+                    </article>
+                </div>
+                <div class="see-all-container">
+                    <div class="see-all">
+                        <a href="#" class="see-all-button">Xem tất cả<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+            </main>
+        </div>
+
+        <div class="footer-container">
+            <footer class="footer">
+                <h3>Liên hệ: </h3>
+                <p>&nbsp;Số điện thoại: 0969707708 || Email: habengialoc@gmail.com</p>
+            </footer>
+        </div>
+    </body>
+
+</html>
