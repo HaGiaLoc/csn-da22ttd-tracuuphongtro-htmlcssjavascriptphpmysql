@@ -89,34 +89,194 @@
             <main>    
                 <div class="search-bar">
                     <form action="#" class="form-tim-kiem">
-                            <div class="dropdown" onclick="toggleDropdown(this)">
+                        <div class="dropdown" onclick="toggleDropdown(this)">
                             <div class="location">Địa điểm <i class="fa-solid fa-angle-down"></i></div>
                             <div class="dropdown_content-location">
-                                <input type="hidden" id="district" name="districtValue">
-                                <input type="hidden" id="hamlet" name="hamletValue">
-                                <input type="hidden" id="street" name="streetValue">
+                                <label for="dropdown_content-district">Quận/Huyện</label>
+                                <select name="district" class="dropdown_content-district" onclick="toggleDropdown(this)" onchange="selectDistrict(this)">
+                                    <option value="null"></option>
+                                    <option value="tp-travinh">Thành phố Trà Vinh</option>
+                                    <option value="tx-duyenhai">Thị xã Duyên Hải</option>
+                                    <option value="canglong">Càng Long</option>
+                                    <option value="cauke">Cầu Kè</option>
+                                    <option value="caungang">Cầu Ngang</option>
+                                    <option value="h-duyenhai">Huyện Duyên Hải</option>
+                                    <option value="chauthanh">Châu Thành</option>
+                                    <option value="tracu">Trà Cú</option>
+                                    <option value="tieucan">Tiểu Cần</option>
+                                </select>
+
+                                <label id="label-TraVinh" for="dropdown_content-hamlet" style="display: none;">Phường/Xã</label>
+                                <select class="dropdown_content-hamlet" id="TraVinh" onclick="toggleDropdown(this)" style="display: none">
+                                    <option value="null"></option>
+                                    <option value="longduc">Long Đức</option>
+                                    <option value="phuong1">Phường 1</option>
+                                    <option value="phuong2">Phường 2</option>
+                                    <option value="phuong3">Phường 3</option>
+                                    <option value="phuong4">Phường 4</option>
+                                    <option value="phuong5">Phường 5</option>
+                                    <option value="phuong6">Phường 6</option>
+                                    <option value="phuong7">Phường 7</option>
+                                    <option value="phuong8">Phường 8</option>
+                                    <option value="phuong9">Phường 9</option>
+                                </select>
+                                
+                                <label id="label-tx_DuyenHai" for="dropdown_content-hamlet" style="display: none;">Phường/Xã</label>
+                                <select class="dropdown_content-hamlet" id="tx_DuyenHai" onclick="toggleDropdown(this)" style="display: none">
+                                    <option value="null"></option>
+                                    <option value="phuong1">Phường 1</option>
+                                    <option value="phuong2">Phường 2</option>
+                                    <option value="danthan">Dân Thành</option>
+                                    <option value="hiepthanh">Hiệp Thạnh</option>
+                                    <option value="longhuu">Long Hữu</option>
+                                    <option value="longtoan">Long Toàn</option>
+                                    <option value="truonglonghoa">Trường Long Hòa</option>
+                                </select>
+
+                                <label id="label-CangLong" for="dropdown_content-hamlet" style="display: none;">Phường/Xã</label>
+                                <select class="dropdown_content-hamlet" id="CangLong" onclick="toggleDropdown(this)" style="display: none">
+                                    <option value="null"></option>
+                                    <option value="tt-cauke">Thị trấn Càng Long</option>
+                                    <option value="antruong">An Trường</option>
+                                    <option value="antruonga">An Trường A</option>
+                                    <option value="binhphu">Bình Phú</option>
+                                    <option value="daiphuc">Đại Phúc</option>
+                                    <option value="daiphuoc">Đại Phước</option>
+                                    <option value="ducmy">Đức Mỹ</option>
+                                    <option value="huyenhoi">Huyền Hội</option>
+                                    <option value="mycam">Mỹ Cẩm</option>
+                                    <option value="nhilong">Nhị Long</option>
+                                    <option value="nhilongphu">Nhị Long Phú</option>
+                                    <option value="phuongthanh">Phương Thạnh</option>
+                                    <option value="tanan">Tân An</option>
+                                    <option value="tanbinh">Tân Bình</option>
+                                </select>
+
+                                <label id="label-CauKe" for="dropdown_content-hamlet" style="display: none;">Phường/Xã</label>
+                                <select class="dropdown_content-hamlet" id="CauKe" onclick="toggleDropdown(this)" style="display: none">
+                                    <option value="null"></option>
+                                    <option value="tt-cauke">Thị trấn Cầu Kè</option>
+                                    <option value="anphutan">An Phú Tân</option>
+                                    <option value="chuadien">Châu Điền</option>
+                                    <option value="hoaan">Hòa Ân</option>
+                                    <option value="hoatan">Hòa Tân</option>
+                                    <option value="ninhthoi">Ninh Thới</option>
+                                    <option value="phongphu">Phong Phú</option>
+                                    <option value="phongthanh">Phong Thạnh</option>
+                                    <option value="tamngai">Tam Ngãi</option>
+                                    <option value="thanhphu">Thạnh Phú</option>
+                                    <option value="thonghoa">Thông Hòa</option>
+                                </select>
+                                
+                                <label id="label-CauNgang" for="dropdown_content-hamlet" style="display: none;">Phường/Xã</label>
+                                <select class="dropdown_content-hamlet" id="CauNgang" onclick="toggleDropdown(this)" style="display: none">
+                                    <option value="null"></option>
+                                    <option value="tt-caungang">Thị trấn Cầu Ngang</option>
+                                    <option value="tt-mylong">Thị trấn Mỹ Long</option>
+                                    <option value="chuadien">Hiệp Hòa</option>
+                                    <option value="hoaan">Hòa Ân</option>
+                                    <option value="hoatan">Hòa Tân</option>
+                                    <option value="ninhthoi">Ninh Thới</option>
+                                    <option value="phongphu">Phong Phú</option>
+                                    <option value="phongthanh">Phong Thạnh</option>
+                                    <option value="tamngai">Tam Ngãi</option>
+                                    <option value="thanhphu">Thạnh Phú</option>
+                                    <option value="thonghoa">Thông Hòa</option>
+                                </select>
+
+                                <label id="label-h_DuyenHai" for="dropdown_content-hamlet" style="display: none;">Phường/Xã</label>
+                                <select class="dropdown_content-hamlet" id="h_DuyenHai" onclick="toggleDropdown(this)" style="display: none">
+                                    <option value="null"></option>
+                                    <option value="tt-longthanh">Thị trấn Long Thành</option>
+                                    <option value="donchau">Đôn Châu</option>
+                                    <option value="donxuan">Đôn Xuân</option>
+                                    <option value="donghai">Đông Hải</option>
+                                    <option value="ngulac">Ngũ Lạc</option>
+                                    <option value="longkhanh">Long Khánh</option>
+                                    <option value="longvinh">Long Vĩnh</option>
+                                </select>
+
+                                <label id="label-ChauThanh" for="dropdown_content-hamlet" style="display: none;">Phường/Xã</label>
+                                <select class="dropdown_content-hamlet" id="ChauThanh" onclick="toggleDropdown(this)" style="display: none">
+                                    <option value="null"></option>
+                                    <option value="tt-chauthanh">Thị trấn Châu Thành</option>
+                                    <option value="daloc">Đa Lộc</option>
+                                    <option value="hoaloi">Hòa Lợi</option>
+                                    <option value="hoaminh">Hòa Minh</option>
+                                    <option value="hoathuan">Hòa Thuận</option>
+                                    <option value="hungmy">Hưng Mỹ</option>
+                                    <option value="longhoa">Long Hòa</option>
+                                    <option value="luonghoa">Lương Hòa</option>
+                                    <option value="luonghoaa">Lương Hòa A</option>
+                                    <option value="mychanh">Mỹ Chánh</option>
+                                    <option value="nguyethoa">Nguyệt Hóa</option>
+                                    <option value="phuochao">Phước Hảo</option>
+                                    <option value="songloc">Song Lộc</option>
+                                    <option value="thanhmy">Thanh Mỹ</option>
+                                </select>
+
+                                <label id="label-TraCu" for="dropdown_content-hamlet" style="display: none;">Phường/Xã</label>
+                                <select class="dropdown_content-hamlet" id="TraCu" onclick="toggleDropdown(this)" style="display: none">
+                                    <option value="null"></option>
+                                    <option value="tt-tracu">Thị trấn Trà Cú</option>
+                                    <option value="tt-dinhan">Thị trấn Định An</option>
+                                    <option value="anquanghuu">An Quảng Hữu</option>
+                                    <option value="daian">Đại An</option>
+                                    <option value="dinhan">Định An</option>
+                                    <option value="hamgiang">Hàm Giang</option>
+                                    <option value="hamtan">Hàm Tân</option>
+                                    <option value="kimson">Kim Sơn</option>
+                                    <option value="longhiep">Long Hiệp</option>
+                                    <option value="luunghiepanh">Lưu Nghiệp Anh</option>
+                                    <option value="ngaixuyen">Ngãi Xuyên</option>
+                                    <option value="ngocbien">Ngọc Biên</option>
+                                    <option value="phuochung">Phước Hưng</option>
+                                    <option value="tanhiep">Tân Hiệp</option>
+                                    <option value="tanson">Tân Sơn</option>
+                                    <option value="tapson">Tập Sơn</option>
+                                    <option value="thanhson">Thanh Sơn</option>
+                                </select>
+
+                                <label id="label-TieuCan" for="dropdown_content-hamlet" style="display: none;">Phường/Xã</label>
+                                <select class="dropdown_content-hamlet" id="TieuCan" onclick="toggleDropdown(this)" style="display: none">
+                                    <option value="null"></option>
+                                    <option value="tt-tieucan">Thị trấn Tiểu Cần</option>
+                                    <option value="tt-cauquan">Thị trấn Cầu Quan</option>
+                                    <option value="hieutrung">Hiếu Trung</option>
+                                    <option value="hieutu">Hiếu Tử</option>
+                                    <option value="hunghoa">Hùng Hòa</option>
+                                    <option value="longthoi">Long Thới</option>
+                                    <option value="ngaihung">Ngãi Hùng</option>
+                                    <option value="phucan">Phú Cần</option>
+                                    <option value="tanhoa">Tân Hòa</option>
+                                    <option value="tanhung">Tân Hùng</option>
+                                    <option value="tapngai">Tập Ngãi</option>
+                                </select>
+
+                                <button onclick="applyLocation()">Apply</button>
                             </div>
                         </div>
                         <div class="dropdown" onclick="toggleDropdown(this)">
                             <div class="price">Giá thành <i class="fa-solid fa-angle-down"></i></div>
                             <div class="dropdown_content-price">
-                                <input type="range" id="slider_gia" min="0" max="30000000" value="15000000" oninput="updatePriceInputs()">
                                 <div class="nhap-gia">
                                     <input type="text" class="price-min_max" id="gia_toi_thieu" value="0" oninput="updateSliderLimits()">
-                                    <input type="text" class="price-min_max" id="gia_toi_da" value="30000000" oninput="updateSliderLimits()">
+                                    <input type="text" class="price-min_max" id="gia_toi_da" value="5000000" oninput="updateSliderLimits()">
                                 </div>
+                                <input type="range" id="slider_gia" min="0" max="5000000" value="5000000" oninput="updatePriceInputs()">
+                            <button onclick="applyPrice()">Apply</button>
                             </div>
                         </div>
                         <div class="dropdown" onclick="toggleDropdown(this)">
                             <div class="area">
-                                <label for="dropdown_content-area">Diện tích</label>
-                                <select id="dropdown_content-area" onchange="selectArea(this)">
-                                    <option value="under-20">Dưới 20 m²</option>
-                                    <option value="20-40">20 m² - 40 m²</option>
-                                    <option value="40-60">40 m² - 60 m²</option>
-                                    <option value="60-80">60 m² - 80 m²</option>
-                                    <option value="80-100">80 m² - 100 m²</option>
-                                    <option value="above-100">Trên 100 m²</option>
+                                <label for="dropdown_content_area">Diện tích</label>
+                                <select id="dropdown_content_area" onchange="selectArea(this)">
+                                    <option value="under-10">Dưới 10 m²</option>
+                                    <option value="10-20">10 m² - 20 m²</option>
+                                    <option value="20-30">20 m² - 30 m²</option>
+                                    <option value="30-40">30 m² - 40 m²</option>
+                                    <option value="40-50">40 m² - 50 m²</option>
+                                    <option value="above-50">Trên 50 m²</option>
                                 </select>
                             </div>
                         </div>
