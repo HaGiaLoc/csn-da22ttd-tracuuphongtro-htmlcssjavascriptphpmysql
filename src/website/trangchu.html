@@ -1,0 +1,38 @@
+<?php
+header("Cache-Control: no-cache, must-revalidate");
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+?>
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <title>Trang chủ</title>
+        <link rel="stylesheet" href="<?php echo dirname($_SERVER['PHP_SELF']) ?>/../styles.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <script src="../javascript.js"></script>
+        <script src="../dangnhap.js"></script>
+        <?php include 'db_connection.php'; ?>
+    </head>
+
+    <body class="home-page">
+        <?php include 'header.php'; ?>
+        <div class="main-container">
+            <main>    
+                <img class="introduction-img" src="../images/introduction_img.png" alt="Khu nhà ở cao tầng ở Đồng Hới">
+                
+                <h2 class="new_phongtro">PHÒNG TRỌ MỚI ĐĂNG</h2>
+                
+                <?php include 'get_phongtro.php'; ?>
+
+                <div class="see-all-container">
+                    <div class="see-all">
+                        <a href="index.php?page=phongtro" class="see-all-button">Xem tất cả<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <?php include 'footer.php'; ?>
+    </body>
+</html>
