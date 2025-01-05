@@ -56,9 +56,6 @@ $result = $conn->query($sql);
                     echo "<td>{$row['moTaDichVu']}</td>";
                     echo "<td>{$row['donVi']}</td>";
                     echo "<td class='action-buttons'>
-                            <a href='admin_dashboard.php?page=sua_dichvu&id={$row['maDichVu']}' class='edit-btn'>
-                                <i class='fas fa-edit'></i> Sửa
-                            </a>
                             <a href='admin_dashboard.php?page=danhsach_dichvu&action=delete&id={$row['maDichVu']}' 
                                class='delete-btn' 
                                onclick='return confirm(\"Bạn có chắc chắn muốn xóa dịch vụ này?\")'>

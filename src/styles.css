@@ -91,12 +91,11 @@ button img {
     padding: 30px;
     padding-top: 40px;
     border: 1px solid #888;
-    width: 800px;
     display: flex;
     justify-content: space-between;
     position: relative;
-    margin: 20%;
-    margin-top: -30px;
+    margin: 25%;
+    margin-top: 50px;
 }
 
 .close {
