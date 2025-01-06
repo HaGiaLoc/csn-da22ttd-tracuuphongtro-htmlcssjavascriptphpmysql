@@ -37,8 +37,9 @@
    - Ứng dụng web có thể được tải về bằng cách tải file src.
 
 2. **Cài đặt XAMPP**:
-   - Đảm bảo bạn đã cài đặt [XAMPP](https://www.apachefriends.org).
-   - Tạo cơ sở dữ liệu trong MySQL với tên `phongtro_db` và nhập các bảng từ file `phongtro_db.sql`.
+   - Đảm bảo rằng [XAMPP](https://www.apachefriends.org) đã được cài đặt trên máy tính của bạn.
+   - Sau khi cài đặt, hãy khởi động Apache và MySQL.
+   - Tiếp theo, hãy tạo một cơ sở dữ liệu trong MySQL có tên là `phongtro_db`. Sau đó, hãy nhập các bảng vào cơ sở dữ liệu này từ file `phongtro_db.sql`.
 
 3. **Cài đặt ứng dụng web**:
    - Vào thư mục htdocs trong xampp `.\xampp\htdocs\`.
