@@ -72,7 +72,7 @@ button img {
     color: white;
     font-size: 1.25rem;
 }
-
+/*Định dạng cho form đăng ký và đăng nhập*/
 .modal {
     display: none;
     position: fixed;
@@ -1127,7 +1127,14 @@ button img {
     color: #555;
 }
 
-.review-form select,
+.review-form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
 .review-form textarea {
     width: 100%;
     padding: 10px;
@@ -2371,4 +2378,20 @@ footer {
     font-size: 20px;
     font-weight: bold;
     padding: 10px 0px 10px 10px;
+}
+
+.rating-input {
+    display: flex; /* Sử dụng flexbox để căn chỉnh các phần tử */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-bottom: 10px; /* Khoảng cách dưới */
+}
+
+.rating-input label {
+    margin-right: 10px; /* Khoảng cách giữa label và select */
+}
+
+.rating-input select {
+    padding: 5px; /* Thêm padding cho select */
+    font-size: 1rem; /* Kích thước chữ cho select */
+    width: 10%;
 }

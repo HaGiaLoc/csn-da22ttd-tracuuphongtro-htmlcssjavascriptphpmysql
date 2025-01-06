@@ -40,14 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Đăng nhập Quản trị</title>
+    <title>Đăng nhập quản trị</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="admin-login-container">
         <div class="admin-login-form">
-            <h2>Đăng nhập Quản trị</h2>
+            <h2>Đăng nhập quản trị</h2>
             <?php if (isset($error)): ?>
                 <div class="error-message"><?php echo $error; ?></div>
             <?php endif; ?>

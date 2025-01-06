@@ -132,7 +132,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // Lấy tên file hiện tại
                 <div class="dropdown">
                     <div class="dropdown-btn" onclick="toggleDropdown(this.parentElement)">
                         <div class="selected-container">
-                            <span class="selected-text"><?php echo $selected_location ? $selected_location : 'Vị trí'; ?></span>
+                            <span class="selected-text"><?php echo $selected_location ? $selected_location : 'Địa chỉ'; ?></span>
                         </div>
                         <div class="icons-container">
                             <i class="fas fa-times clear-selection" onclick="clearSelection(event, 'location')" <?php echo !$selected_location ? 'style="display:none;"' : ''; ?>></i>

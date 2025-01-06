@@ -173,7 +173,7 @@ if (isset($_GET['id'])) {
                                     <p><?php echo $phongTro['dienTich']; ?> m²</p>
                                 </div>
                                 <div class="vi-tri">
-                                    <h3>Địa điểm</h3>
+                                    <h3>Địa chỉ</h3>
                                     <p><?php echo $phongTro['diaChi']; ?></p>
                                 </div>
                             </div>

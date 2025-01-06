@@ -14,14 +14,14 @@ require_once '../website/db_connection.php';
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Quản trị Phòng trọ</title>
+    <title>Quản trị phòng trọ</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="admin-container">
         <div class="admin-sidebar">
-            <h2>Menu Quản trị</h2>
+            <h2>Menu quản trị</h2>
             <nav>
                 <ul>
                     <li>
