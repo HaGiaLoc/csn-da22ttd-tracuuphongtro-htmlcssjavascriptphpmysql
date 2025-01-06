@@ -41,7 +41,7 @@
    - Tạo cơ sở dữ liệu trong MySQL với tên `phongtro_db` và nhập các bảng từ file `phongtro_db.sql`.
 
 3. **Cài đặt ứng dụng web**:
-   - Vào thư mục cài xampp `.\xampp\htdocs\`.
+   - Vào thư mục htdocs trong xampp `.\xampp\htdocs\`.
    - Tạo một thư mục với cái tên bất kỳ, ví dụ `phongtro`.
 
 4. **Chạy ứng dụng**:
