@@ -28,7 +28,6 @@ $result = $conn->query($sql);
 <div class="admin-table">
     <div class="table-actions">
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Tìm kiếm dịch vụ...">
             <a href="admin_dashboard.php?page=them_dichvu" class="add-new-btn">
                 <i class="fas fa-plus"></i>
                 Thêm
